@@ -12,6 +12,7 @@ $(document).ready ->
 # index banner
   $('ul#index-banner').bxSlider
 #    mode: 'fade'
+#    easing:'ease'
     controls: false
 #    auto: true
     pause: 6000
@@ -22,19 +23,19 @@ $(document).ready ->
   owl1.owlCarousel
     pagination: false,
     navigation: false,
-    items: 6 #10 items above 1000px browser width
-    itemsDesktop: [ #5 items between 1000px and 901px
-      1000
-      3
-    ]
-    itemsDesktopSmall: [ # betweem 900px and 601px
-      900
-      2
-    ]
-    itemsTablet: [ #2 items between 600 and 0
-      780
-      2
-    ]
+    items: 7 #10 items above 1000px browser width
+#    itemsDesktop: [ #5 items between 1000px and 901px
+#      1000
+#      3
+#    ]
+#    itemsDesktopSmall: [ # betweem 900px and 601px
+#      900
+#      2
+#    ]
+#    itemsTablet: [ #2 items between 600 and 0
+#      780
+#      2
+#    ]
     itemsMobile: false # itemsMobile disabled - inherit from itemsTablet option
     autoPlay : false
 

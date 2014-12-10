@@ -43,3 +43,5 @@ gem 'slim-rails'
 
 gem 'bxslider-rails'
 gem 'owlcarousel-rails'
+
+gem 'thin'
