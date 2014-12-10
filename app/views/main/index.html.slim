@@ -1,0 +1,37 @@
+= render partial: 'partials/index_banner'
+.wore-info-wrap
+  .row
+    .small-12.medium-2.medium-offset-1.large-2.large-offset-1.columns
+      img src="http://placehold.it/480x600&text=[img 1]"
+    .small-12.medium-2.large-2.columns
+      img src="http://placehold.it/480x600&text=[img 2]"
+    .small-12.medium-2.large-2.columns
+      img src="http://placehold.it/480x600&text=[img 3]"
+    .small-12.medium-2.large-2.columns
+      img src="http://placehold.it/480x600&text=[img 4]"
+    .small-12.medium-2.medium-pull-1.large-2.large-pull-1.columns
+      img src="http://placehold.it/480x600&text=[img 5]"
+
+
+.welcome-login-form
+  .row
+    .columns.large-2.medium-2.text-center
+      .row
+        .columns
+          h3 Welcome!
+      .row
+        .columns
+          h5 please log in
+    .columns.large-10.medium-10
+      form method="post" action="index.html"
+        .input
+          input type="text" name="login" value="" placeholder="Username or Email"
+          label e-mail
+        .input
+          input type="password" name="password" value="" placeholder="Password"
+          label password
+        .input.submit
+          input type="submit" name="commit" value="Login"
+          a forgot password?
+= render partial: 'partials/online_girls_carousel'
+= render partial: 'partials/love_stories_carousel'

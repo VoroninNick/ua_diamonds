@@ -1,0 +1,188 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.sass.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+= triangle($dir, $size, $color)
+    border: $size transparent solid
+    width: $size
+    @if ($dir == "top" or $dir == "up")
+        border-bottom-color: $color
+    @else if ($dir == "right" or $dir == "after")
+        border-left-color: $color
+    @else if ($dir == "bottom" or $dir == "down")
+        border-top-color: $color
+    @else if ($dir == "left" or $dir == "before")
+        border-right-color: $color
+
+= my_vertical_align($size: 50%)
+    position: relative
+    top: $size
+    -webkit-transform: translateY(-$size)
+    -moz-transform: translateY(-$size)
+    -ms-transform: translateY(-$size)
+    -o-transform: translateY(-$size)
+    transform: translateY(-$size)
+    @content
+
+= my_horizontal_align
+    position: relative
+    left: 50%
+    -webkit-transform: translateX(-50%)
+    -moz-transform: translateX(-50%)
+    -ms-transform: translateX(-50%)
+    -o-transform: translateX(-50%)
+    transform: translateX(-50%)
+    @content
+
+= my_center_align ($top: 50%)
+    position: relative
+    top: $top
+    left: 50%
+    -webkit-transform: translate(-50%, -50%)
+    -moz-transform: translate(-50%, -50%)
+    -ms-transform: translate(-50%, -50%)
+    -o-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+    @content
+
+
+= transition($transition-property, $transition-time, $method)
+    -webkit-transition: $transition-property $transition-time $method
+    -moz-transition: $transition-property $transition-time $method
+    -ms-transition: $transition-property $transition-time $method
+    -o-transition: $transition-property $transition-time $method
+    transition: $transition-property $transition-time $method
+
+.bi
+    max-width: 100%
+    width: 100% !important
+    height: 100% !important
+    overflow: hidden !important
+    -webkit-background-size: cover !important
+    -moz-background-size: cover !important
+    -o-background-size: cover !important
+    background-size: cover !important
+    margin: 0 auto
+
+// sticky footer
+.sf_container
+    display: table
+    height: 100%
+    width: 100%
+    @media (min-width : 0em) and (max-width : 1022px)
+        display: block
+
+.sf_footer
+    display: table-row
+    height: 1px
+// end sf
+header
+    .header-login-wrap
+        height: 118px
+        position: absolute
+        top: -115px
+        left: 0
+        right: 0
+        z-index: 2
+        transition: top .5s
+        &.expand
+            top: 0
+        .header-login
+            height: inherit
+            background-color: #A0010F
+            border-bottom: 1px solid #78010B
+        .open-header-login-wrap
+            .open-header-login
+                width: 20px
+                height: 20px
+                background-color: #78010B
+                cursor: pointer
+                margin: 0 auto
+                margin-top: 10px
+    .header-logo
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        a
+            display: block
+            width: 120px
+            height: 120px
+            position: relative
+            z-index: 11
+            img
+                -webkit-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.7)
+                -moz-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.7)
+                box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.7)
+
+.index-banner-wrap
+    height: 670px
+    position: relative
+    .bx-wrapper, .bx-viewport, ul#index-banner, ul#index-banner li
+        height: inherit
+    ul#index-banner
+        margin-left: 0
+        li
+            list-style: none
+    .pagers-index-banner-wrap
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        ul#pagers-index-banner
+            margin-left: 0
+            li
+                list-style: none
+                display: inline-block
+                width: 100%
+                a
+                    width: 27px
+                    height: 21px
+                    display: block
+                    background: url('<%=asset_path("dia-pager.png")%>')no-repeat
+                    background-size: 100%
+                    margin: 0 auto
+                    &.active
+                        background: url('<%=asset_path("dia-pager-active.png")%>')no-repeat
+                        background-size: 100%
+                        top: -3px
+                        position: relative
+.welcome-login-form
+    height: 100px
+    background: #84aad6 /* Old browsers */
+    background: -moz-linear-gradient(left,  #84aad6 0%, #3763a1 100%) /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#84aad6), color-stop(100%,#3763a1)) /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #84aad6 0%,#3763a1 100%) /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #84aad6 0%,#3763a1 100%) /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #84aad6 0%,#3763a1 100%) /* IE10+ */
+    background: linear-gradient(to right,  #84aad6 0%,#3763a1 100%) /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84aad6', endColorstr='#3763a1',GradientType=1 ) /* IE6-9 */
+    form
+        .input
+            width: 33.3333%
+            display: inline-block
+            input
+                width: 100%
+ul#online-girls
+    margin-left: 0
+    height: 280px
+    li
+        display: inline-block
+        position: relative
+        margin: 0 1px 0 1px
+        .status
+            position: absolute
+            height: 45px
+            left: 0
+            right: 0
+            bottom: 0
+            background: #8dc63f /* Old browsers */
+            background: -moz-linear-gradient(left,  #8dc63f 0%, #39b54a 100%) /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,#8dc63f), color-stop(100%,#39b54a)) /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(left,  #8dc63f 0%,#39b54a 100%) /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(left,  #8dc63f 0%,#39b54a 100%) /* Opera 11.10+ */
+            background: -ms-linear-gradient(left,  #8dc63f 0%,#39b54a 100%) /* IE10+ */
+            background: linear-gradient(to right,  #8dc63f 0%,#39b54a 100%) /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8dc63f', endColorstr='#39b54a',GradientType=1 ) /* IE6-9 */
+
+
+
