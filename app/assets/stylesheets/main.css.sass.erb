@@ -52,6 +52,62 @@
     -o-transition: $transition-property $transition-time $method
     transition: $transition-property $transition-time $method
 
+@-webkit-keyframes myOpacityDown
+    from
+        opacity: 1
+        z-index: 111
+    to
+        opacity: 0
+        z-index: 100
+@-moz-keyframes myOpacityDown
+    from
+        opacity: 1
+        z-index: 111
+    to
+        opacity: 0
+        z-index: 100
+@-ms-keyframes myOpacityDown
+    from
+        opacity: 1
+        z-index: 111
+    to
+        opacity: 0
+        z-index: 100
+@keyframes myOpacityDown
+    from
+        opacity: 1
+        z-index: 111
+    to
+        opacity: 0
+        z-index: 100
+@-webkit-keyframes my_opacity_up
+    from
+        opacity: 0
+        z-index: 100
+    to
+        opacity: 1
+        z-index: 111
+@-moz-keyframes my_opacity_up
+    from
+        opacity: 0
+        z-index: 100
+    to
+        opacity: 1
+        z-index: 111
+@-ms-keyframes my_opacity_up
+    from
+        opacity: 0
+        z-index: 100
+    to
+        opacity: 1
+        z-index: 111
+@keyframes my_opacity_up
+    from
+        opacity: 0
+        z-index: 100
+    to
+        opacity: 1
+        z-index: 111
 .bi
     max-width: 100%
     width: 100% !important
@@ -91,16 +147,17 @@ header
     top: 0
     right: 0
     z-index: 111
+    &.expand
+        .header-login-wrap
+            top: 0
     .header-login-wrap
         height: 118px
         position: absolute
         top: -115px
         left: 0
         right: 0
-        z-index: 2
+        z-index: 110
         transition: top .5s
-        &.expand
-            top: 0
         .header-login
             height: inherit
             background-color: #A0010F
@@ -121,15 +178,25 @@ header
         right: 0
         a
             display: block
-            width: 120px
-            height: 120px
+            width: 140px
+            height: 140px
             position: relative
-            z-index: 11
-            img
-                -webkit-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.7)
-                -moz-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.7)
-                box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.7)
-
+            z-index: 112
+    .header-anchors
+        ul
+            margin-left: 0
+            position: absolute
+            margin-bottom: 0
+            margin-top: 15px
+            z-index: 111
+            li
+                display: inline-block
+                padding: 0 10px
+                a
+                    font-family: "Fira Sans", sans-serif
+                    font-size: 0.75rem
+                    font-weight: 300
+                    color: white
 .index-banner-wrap
     height: 670px
     position: relative
@@ -139,6 +206,99 @@ header
         margin-left: 0
         li
             list-style: none
+            position: relative
+            .banner-content
+                position: absolute
+                left: 0
+                top: 0
+                right: 0
+                bottom: 0
+                .content-wrap
+                    height: 670px
+                    position: relative
+                    .content
+                        position: absolute
+                        left: 0
+                        right: 0
+                        bottom: 100px
+                        h5
+                            font:
+                                family: 'nautilus_pompiliusregular'
+                                size: 1.84375rem
+                                weight: 400
+                            color: #fff
+                            margin: 0
+                            line-height: 1.5rem
+                            margin-left: 15%
+                            @media (min-width : 0em) and (max-width : 40em)
+                                margin-left: 0
+                        h3
+                            font:
+                                family: "Fira Sans", sans-serif
+                                size: 4.94375rem
+                                weight: 400
+                            color: #fff
+                            position: relative
+                            padding-left: 32px
+                            line-height: 4rem
+                            &:before
+                                display: block
+                                content: ''
+                                background: url('<%=asset_path("banner-small-diamond-1.png")%>')no-repeat
+                                background-size: 100%
+                                width: 26px
+                                height: 16px
+                                position: absolute
+                                top: 10px
+                                left: 0
+
+                        p
+                            font:
+                                family: "Fira Sans", sans-serif
+                                size: 1.125rem
+                                weight: 300
+                            color: #fff
+                            margin-left: 15%
+                            @media (min-width : 0em) and (max-width : 40em)
+                                margin-left: 0
+
+                        .join-banner-button
+                            width: 80%
+                            height: 85px
+                            background: #b3343f /* Old browsers */
+                            background: -moz-linear-gradient(left,  #b3343f 0%, #a0010f 100%) /* FF3.6+ */
+                            background: -webkit-gradient(linear, left top, right top, color-stop(0%,#b3343f), color-stop(100%,#a0010f)) /* Chrome,Safari4+ */
+                            background: -webkit-linear-gradient(left,  #b3343f 0%,#a0010f 100%) /* Chrome10+,Safari5.1+ */
+                            background: -o-linear-gradient(left,  #b3343f 0%,#a0010f 100%) /* Opera 11.10+ */
+                            background: -ms-linear-gradient(left,  #b3343f 0%,#a0010f 100%) /* IE10+ */
+                            background: linear-gradient(to right,  #b3343f 0%,#a0010f 100%) /* W3C */
+                            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3343f', endColorstr='#a0010f',GradientType=1 ) /* IE6-9 */
+                            padding: 20px 28px 12px 28px
+                            border-top: 1px solid #B3343F
+                            border-bottom: 1px solid #78010B
+                            -webkit-box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.45)
+                            -moz-box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.45)
+                            box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.45)
+                            @media (min-width : 0em) and (max-width : 40em)
+                                width: 100%
+                            h4
+                                font:
+                                    family: "Fira Sans", sans-serif
+                                    size: 2.25rem
+                                    weight: 400
+                                color: #fff
+                                line-height: 2rem
+                                padding: 0
+                                margin: 0
+                                text-transform: uppercase
+                                text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.45)
+                            p
+                                font:
+                                    family: "Fira Sans", sans-serif
+                                    size: 1rem
+                                    weight: 400
+                                color: #C6676F
+                                margin-bottom: 0
     .pagers-index-banner-wrap
         position: absolute
         left: 0
@@ -162,6 +322,8 @@ header
                     position: absolute
                     top: 0
                     left: -1970px
+                    @media (min-width : 0em) and (max-width : 970px)
+                        left: -1995px
                 &:after
                     display: block
                     content: ''
@@ -171,6 +333,9 @@ header
                     position: absolute
                     top: 0
                     right: -970px
+                    @media (min-width : 0em) and (max-width : 970px)
+                        right: -990px
+
         ul#pagers-index-banner
             margin-left: 0
             margin-bottom: 0
@@ -224,14 +389,25 @@ header
         font:
             size: 1.440625rem
         text-transform: uppercase
+        margin-bottom: 0
+        line-height: 1.4rem
+        margin-top: 1rem
     h5
         font:
             size: 1.05rem
+        margin-top: 0
 .no-padding
     padding-left: 0
     padding-right: 0
+.no-padding-left
+    padding-left: 0
+    @media (min-width : 0em) and (max-width : 40em)
+        padding-left: 0.9375rem
+.no-padding-right
+    padding-right: 0
+    @media (min-width : 0em) and (max-width : 40em)
+        padding-right: 0.9375rem
 .welcome-login-form
-    height: 100px
     background: #84aad6 /* Old browsers */
     background: -moz-linear-gradient(left,  #84aad6 0%, #3763a1 100%) /* FF3.6+ */
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,#84aad6), color-stop(100%,#3763a1)) /* Chrome,Safari4+ */
@@ -245,6 +421,10 @@ header
     box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.4)
     position: relative
     z-index: 1
+    @media (min-width : 0em) and (max-width : 40em)
+        padding-top: 1.5rem
+        padding-bottom: 3rem
+
     a
         font:
             family: "Fira Sans", sans-serif
@@ -256,10 +436,16 @@ header
         height: 100px
         width: 100%
         position: relative
+        @media (min-width : 0em) and (max-width : 40em)
+            height: auto
         .wl
             width: inherit
             +my_vertical_align
                 position: absolute
+            @media (min-width : 0em) and (max-width : 40em)
+                position: static
+                transform: none
+                top: 0
     h3
         font:
             family: 'nautilus_pompiliusregular'
@@ -277,8 +463,10 @@ header
         margin-bottom: 0
     form
         .input
-            width: 33.3333%
+            width: 100%
             display: inline-block
+            @media (min-width : 0em) and (max-width : 40em)
+                padding-bottom: 6px
             input
                 width: 100%
 ul#online-girls
@@ -326,6 +514,15 @@ ul#online-girls
         height: 0
         padding-bottom: 80%
         position: relative
+        @media (min-width : 0em) and (max-width : 40em)
+            height: auto
+            padding-top: 1rem
+            padding-bottom: 3rem
+            position: static
+            ul
+                transform: none !important
+                top: 0 !important
+                position: static !important
         ul
             +my_vertical_align
                 position: absolute
@@ -352,6 +549,9 @@ ul#online-girls
                     line-height: 1.75rem
                     margin-bottom: 0
 .how-it-works-wrap
+    .how-it-work-one
+        @media (min-width : 0em) and (max-width : 40em)
+            padding-bottom: 2rem
     .how-it-works-header
         width: 100%
         height: 2px
@@ -370,9 +570,9 @@ ul#online-girls
             top: -35px
             height: 54px
 .love-stories-wrap
-    height: 370px
     background: #D3E0F0
     margin-top: 35px
+    padding-bottom: 50px
     .love-stories-header
         width: 100%
         height: 2px
@@ -390,11 +590,95 @@ ul#online-girls
             left: 20px
             top: -35px
             height: 54px
+    .bx-wrapper
+        .bx-viewport
+            background: none
+    ul.love-stories
+        margin-left: 0
+        li
+            .text-about
+                p
+                    font:
+                        family: "Fira Sans", sans-serif
+                    color: #58595b
+    .ls-wrap
+        width: 100%
+        height: 0
+        padding-bottom: 50%
+        position: relative
+        .ls-bi-wrap
+            position: absolute
+            left: 0
+            top: 0
+            right: 0
+            bottom: 49px
+            border: 1px solid #A7A9AC
+            border-bottom: 2px solid #A7A9AC
+        .ls-about-wrap
+            position: absolute
+            left: 0
+            bottom: 0
+            right: 0
+            height: 49px
+            .title-info-wrap
+                height: 49px
+                background: #84aad6 /* Old browsers */
+                background: -moz-linear-gradient(left,  #84aad6 0%, #3763a1 100%) /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, right top, color-stop(0%,#84aad6), color-stop(100%,#3763a1)) /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(left,  #84aad6 0%,#3763a1 100%) /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(left,  #84aad6 0%,#3763a1 100%) /* Opera 11.10+ */
+                background: -ms-linear-gradient(left,  #84aad6 0%,#3763a1 100%) /* IE10+ */
+                background: linear-gradient(to right,  #84aad6 0%,#3763a1 100%) /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84aad6', endColorstr='#3763a1',GradientType=1 ) /* IE6-9 */
+                position: relative
+                margin-left: 5px
+                padding-left: 10px
+                &:after
+                    display: block
+                    content: ''
+                    position: absolute
+                    width: 0px
+                    height: 0px
+                    border-style: solid
+                    border-width: 0 0 49px 49px
+                    border-color: transparent transparent #d3e0f0 transparent
+                    top: 0
+                    right: 0
+                h3
+                    font:
+                        family: 'nautilus_pompiliusregular'
+                        size: 1.766rem
+                        weight: 400
+                    color: #fff
+                    line-height: 1.8rem
+                    margin-bottom: 0
+                    margin-top: 0
+                    padding-top: 4px
+                p
+                    font:
+                        family: "Fira Sans", sans-serif
+                        size: .625rem
+                        weight: 300
+                    color: #fff
+                    margin: 0
+                    line-height: .7rem
+            .find-out-more-wrap
+                height: 49px
+                a
+                    +my_vertical_align
+                        position: absolute
+                    font:
+                        family: "Fira Sans", sans-serif
+                        size: .75rem
+                        weight: 400
+                    color: #B3343F
 
 .men-say-wrap
     height: 370px
     margin-top: 35px
     margin-bottom: 80px
+    @media (min-width : 0em) and (max-width : 40em)
+        height: auto
     .men-say-header
         width: 100%
         height: 2px
@@ -412,6 +696,24 @@ ul#online-girls
             right: 20px
             top: -35px
             height: 54px
+    h3
+        font:
+            family: "Fira Sans", sans-serif
+            size: 1.8rem
+            weight: 300
+        color: #58595B
+        line-height: 1.25rem
+        display: block
+        text-transform: uppercase
+        margin-top: 10px
+    h5
+        font:
+            family: "Fira Sans", sans-serif
+            size: .875rem
+            weight: 400
+        color: #A0010F
+        line-height: 1.25rem
+        display: block
     .circle-wrap
         overflow: hidden
         border-radius: 50%
@@ -440,10 +742,18 @@ ul#online-girls
     background: #D3E0F0
     position: relative
     margin-bottom: 135px
+    @media (min-width : 0em) and (max-width : 40em)
+        height: auto
+        position: static
+        margin-bottom: 45px
     .registration-form
         width: 100%
         +my_vertical_align
             position: absolute
+        @media (min-width : 0em) and (max-width : 40em)
+            transform: none
+            position: static
+            top: 0
         .registration-form-inner
             background: #84aad6 /* Old browsers */
             background: -moz-linear-gradient(left,  #84aad6 0%, #3763a1 100%) /* FF3.6+ */
@@ -456,19 +766,36 @@ ul#online-girls
             -webkit-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.7)
             -moz-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.7)
             box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.7)
+            @media (min-width : 0em) and (max-width : 40em)
+                padding-top: 1rem
             .image-wrap-squad
                 padding-bottom: 100%
+                @media (min-width : 0em) and (max-width : 40em)
+                    padding-bottom: 0
+                    height: auto
+                    img
+                        transform: none
+                        position: static
+                        top: 0
             .input, input
                 width: 100%
             .form-wrap
-                height: 0
-                padding-bottom: 100%
-                position: relative
+                padding-top: 1.86rem
+                padding-bottom: 1.86rem
+                padding-right: .9375rem
+                @media (min-width : 0em) and (max-width : 40em)
+                    padding-top: 0
+                    padding-right: 0
+                    padding-bottom: 2.86rem
                 form
                     width: 100%
-                    +my_vertical_align
-                        position: absolute
-                    padding-right: 0.9375rem
+                    /*+my_vertical_align*/
+                        /*position: absolute*/
+                    padding-right: .9375rem
+                    /*@media (min-width : 0em) and (max-width : 40em)*/
+                        /*transform: none*/
+                        /*position: static*/
+                        /*top: 0*/
             .input
                 padding-bottom: 4px
             .submit
@@ -476,11 +803,27 @@ ul#online-girls
                 padding-bottom: 0
                 input
                     margin-left: 0
+
+                @media (min-width : 0em) and (max-width : 64em)
+                    width: 100%
+.small-medium
+    @media (min-width : 0em) and (max-width : 705px)
+        width: 100%
+        .ls-wrap
+            margin-bottom: 27px
 .image-wrap-squad
     width: 100%
     height: 0
     padding-bottom: 80%
     position: relative
+    @media (min-width : 0em) and (max-width : 40em)
+        height: auto
+        padding-bottom: 0
+        position: static
+        img
+            transform: none !important
+            top: 0 !important
+            position: static !important
     img
         +my_vertical_align
             position: absolute
@@ -493,7 +836,9 @@ footer
     background: -ms-linear-gradient(left,  #f1f2f2 0%,#d1d3d4 100%) /* IE10+ */
     background: linear-gradient(to right,  #f1f2f2 0%,#d1d3d4 100%) /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f2f2', endColorstr='#d1d3d4',GradientType=1 ) /* IE6-9 */
-
+    img
+        /*@media (min-width : 0em) and (max-width : 40em)*/
+        padding-top: 0.9375rem
     ul
         margin-left: 0
         margin-bottom: .8rem
@@ -511,6 +856,8 @@ footer
                 color: #A0010F
                 line-height: 1.25rem
                 display: block
+                &:hover
+                    color: #a0010f
     p
         font:
             family: "Fira Sans", sans-serif
@@ -614,4 +961,8 @@ ul#online-girls
             top: -10px
             right: -170px
             background: #fff
+
+.small-end
+    @media (min-width : 0em) and (max-width : 40em)
+        float: left !important
 

@@ -1,31 +1,26 @@
 = render partial: 'partials/index_banner'
 .more-info-wrap.ico-title
   .row.text-center
-    .small-12.medium-2.medium-offset-1.large-2.large-offset-1.columns
-      = image_tag 'main-reason-01.svg'
+    .small-6.medium-3.large-3.columns
+      = image_tag 'privacy.png'
       h3 Privacy & Safety
       h5 Guarantee
-    .small-12.medium-2.large-2.columns
+    .small-6.medium-3.large-3.columns
       = image_tag 'main-reason-01.svg'
       h3 Real & Validated
       h5 Ladies only
-    .small-12.medium-2.large-2.columns
-      = image_tag 'main-reason-02.svg'
-      h3 SCaM FREE
-      h5 guarantee
-    .small-12.medium-2.large-2.columns
+    .small-6.medium-3.large-3.columns
       = image_tag 'main-reason-03.svg'
       h3 100% Refund
       h5 guarranty
-    .small-12.medium-2.medium-pull-1.large-2.large-pull-1.columns
+    .small-6.medium-3.large-3.columns
       = image_tag 'main-reason-04.svg'
       h3 Free Trial
       h5 for three Days
-
 .clearfix
 .welcome-login-form
   .row
-    .columns.large-2.medium-2.text-center
+    .columns.large-3.medium-3.hide-for-medium-down.text-center
       .wl-wrap
         .wl
           .row
@@ -34,18 +29,24 @@
           .row
             .columns
               h5 please log in
-    .columns.large-10.medium-10
-      .wl-wrap
-        .wl
-          form method="post" action="index.html"
+    form method="post" action="index.html"
+      .columns.large-3.medium-4.small-12.no-padding-right
+        .wl-wrap
+          .wl
             .input
               .input-inner
                 input type="text" name="login" value=""
                 label e-mail
+      .columns.large-3.medium-4.no-padding-right.no-padding-left
+        .wl-wrap
+          .wl
             .input
               .input-inner
                 input type="password" name="password" value=""
                 label password
+      .columns.large-3.medium-4.no-padding-left
+        .wl-wrap
+          .wl
             .input.submit
               .input-inner
                 input type="submit" name="commit" value="Login"
@@ -53,7 +54,7 @@
 .clearfix
 = render partial: 'partials/online_girls_carousel'
 .clearfix
-.why-diamonds-wrap
+#why-we.why-diamonds-wrap
   .row
     .columns.large-6.medium-6
       .image-wrap-squad
@@ -77,54 +78,59 @@
             p YOUR PRIVACY IS 100% PROTECTED
           li
             p 24/7 CUSTOMER SERVİCE AND SUPPORT
+    .clearfix
 .how-it-works-wrap.ico-title
   .row
     .columns
       .how-it-works-header
   .row.text-center
-    .columns.large-3.medium-3
-      = image_tag 'icon-steps-01.svg'
-      h3 SIGN UP
-      h5 its easy & free!
-    .columns.large-3.medium-3
-      = image_tag 'icon-steps-02.svg'
-      h3 discover
-      h5 find your Diamond!
-    .columns.large-3.medium-3
-      = image_tag 'icon-steps-03.svg'
-      h3 communicate
-      h5 to win her heart!
-    .columns.large-3.medium-3
-      = image_tag 'icon-steps-04.svg'
-      h3 date DIAMONDS
-      h5 travel with us!
+    .columns.large-3.medium-3.small-6
+      .how-it-work-one
+        = image_tag 'icon-steps-01.svg'
+        h3 SIGN UP
+        h5 its easy & free!
+    .columns.large-3.medium-3.small-6
+      .how-it-work-one
+        = image_tag 'icon-steps-02.svg'
+        h3 discover
+        h5 find your Diamond!
+    .columns.large-3.medium-3.small-6
+      .how-it-work-one
+        = image_tag 'icon-steps-03.svg'
+        h3 communicate
+        h5 to win her heart!
+    .columns.large-3.medium-3.small-6
+      .how-it-work-one
+        = image_tag 'icon-steps-04.svg'
+        h3 date DIAMONDS
+        h5 travel with us!
 = render partial: 'partials/love_stories_carousel'
-.men-say-wrap
+#men-say.men-say-wrap
   .row
     .columns
       .men-say-header
   .row.text-center
-    .small-12.medium-2.medium-offset-1.large-2.large-offset-1.columns
+    .small-6.medium-2.medium-offset-1.large-2.large-offset-1.columns
       .circle-wrap
         .circle.cbi style="background: url(#{asset_path('m1.jpg')})no-repeat center center;"
       h3 Edward F.
       h5 Manager . 45
-    .small-12.medium-2.large-2.columns
+    .small-6.medium-2.large-2.columns
       .circle-wrap
         .circle.cbi style="background: url(#{asset_path('m2.jpg')})no-repeat center center;"
       h3 Tom J.
       h5 Salesman . 34
-    .small-12.medium-2.large-2.columns
+    .small-6.medium-2.large-2.columns
       .circle-wrap
         .circle.cbi style="background: url(#{asset_path('m3.jpg')})no-repeat center center;"
-      h3 Stephen K.
+      h3 Steph K.
       h5 Designer . 31
-    .small-12.medium-2.large-2.columns
+    .small-6.medium-2.large-2.columns
       .circle-wrap
         .circle.cbi style="background: url(#{asset_path('m4.jpg')})no-repeat center center;"
       h3 Rick D.
       h5 CEO . 44
-    .small-12.medium-2.medium-pull-1.large-2.large-pull-1.columns
+    .small-6.small-end.medium-2.medium-pull-1.large-2.large-pull-1.columns
       .circle-wrap
         .circle.cbi style="background: url(#{asset_path('m5.JPG')})no-repeat center center;"
       h3 Evan M.

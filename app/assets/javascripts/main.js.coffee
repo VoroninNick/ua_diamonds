@@ -3,20 +3,36 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on "click", '.header-login-wrap .open-header-login', ->
-  parentelement = $(this).closest('.header-login-wrap')
+  parentelement = $(this).closest('header')
   parentelement.toggleClass('expand')
+  if $('.header-anchors ul').hasClass('hide')
+    setTimeout (->
+      $('.header-anchors ul').removeClass('hide')
+    ), 500
+  else
+    $('.header-anchors ul').addClass('hide')
+
 
 
 
 $(document).ready ->
+  $(".header-anchors a").click (e)->
+    e.preventDefault()
+    $thisHref = $(this).attr 'href'
+#    hash = window.location.hash
+    $.scrollTo $("#{$thisHref}"), 1500
+
 # index banner
   $('ul#index-banner').bxSlider
-#    mode: 'fade'
-#    easing:'ease'
     controls: false
-#    auto: true
+    auto: true
     pause: 6000
+    speed: 1000
     pagerCustom: 'ul#pagers-index-banner'
+  $('ul.love-stories').bxSlider
+    pause: 6000
+    speed: 1000
+    pager: false
 
 
   owl1 = $("ul#online-girls")
@@ -24,18 +40,6 @@ $(document).ready ->
     pagination: false,
     navigation: false,
     items: 7 #10 items above 1000px browser width
-#    itemsDesktop: [ #5 items between 1000px and 901px
-#      1000
-#      3
-#    ]
-#    itemsDesktopSmall: [ # betweem 900px and 601px
-#      900
-#      2
-#    ]
-#    itemsTablet: [ #2 items between 600 and 0
-#      780
-#      2
-#    ]
     itemsMobile: false # itemsMobile disabled - inherit from itemsTablet option
     autoPlay : false
 
