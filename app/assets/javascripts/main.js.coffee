@@ -28,6 +28,7 @@ $(document).ready ->
     auto: true
     pause: 6000
     speed: 1000
+    touchEnabled:false
     pagerCustom: 'ul#pagers-index-banner'
   $('ul.love-stories').bxSlider
     pause: 6000

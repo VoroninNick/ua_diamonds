@@ -10,9 +10,33 @@ header
           li
             a href="#men-say" Men say
   .header-login-wrap
-    .header-login
+    .header-login.hide-for-small-only
+      .row
+        .columns.large-9.large-offset-3.medium-10.medium-offset-2
+          form method="post" action="index.html"
+            .columns.large-4.medium-4.small-12.no-padding-right
+              .wl-wrap
+                .wl
+                  .input
+                    .input-inner
+                      input type="text" name="login" value=""
+                      label e-mail
+            .columns.large-4.medium-4.no-padding-right.no-padding-left
+              .wl-wrap
+                .wl
+                  .input
+                    .input-inner
+                      input type="password" name="password" value=""
+                      label password
+            .columns.large-4.medium-4.no-padding-left
+              .wl-wrap
+                .wl
+                  .input.submit
+                    .input-inner
+                      input type="submit" name="commit" value="Login"
+                      a forgot password?
     .row
-      .columns.large-1.medium-1.small-1.right
+      .columns.large-1.medium-1.small-1.right.hide-for-small-only
         .open-header-login-wrap
           .open-header-login
   .header-logo

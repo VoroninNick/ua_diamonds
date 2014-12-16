@@ -22,7 +22,15 @@
     -o-transform: translateY(-$size)
     transform: translateY(-$size)
     @content
-
+= my_vertical_align_none()
+    position: static !important
+    top: 0 !important
+    -webkit-transform: none !important
+    -moz-transform: none !important
+    -ms-transform: none !important
+    -o-transform: none !important
+    transform: none !important
+    @content
 = my_horizontal_align
     position: relative
     left: 50%
@@ -162,6 +170,35 @@ header
             height: inherit
             background-color: #A0010F
             border-bottom: 1px solid #78010B
+            .wl-wrap
+                height: 118px
+                position: relative
+                width: 100%
+                .wl
+                    width: inherit
+                    +my_vertical_align
+                        position: absolute
+            .submit
+                input
+                    width: 100%
+                    background: #84aad6 /* Old browsers */
+                    background: -moz-linear-gradient(left, #3763a1 0%,#84aad6  100%) /* FF3.6+ */
+                    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#3763a1), color-stop(100%,#84aad6)) /* Chrome,Safari4+ */
+                    background: -webkit-linear-gradient(left, #3763a1 0%,#84aad6 100%) /* Chrome10+,Safari5.1+ */
+                    background: -o-linear-gradient(left, #3763a1 0%,#84aad6 100%) /* Opera 11.10+ */
+                    background: -ms-linear-gradient(left, #3763a1 0%,#84aad6 100%) /* IE10+ */
+                    background: linear-gradient(to right, #3763a1 0%,#84aad6 100%) /* W3C */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84aad6', endColorstr='#3763a1',GradientType=1 ) /* IE6-9 */
+                    border-top: 1px solid #84aad6
+                    border-bottom: 1px solid #3763a1
+                a
+                    font-family: "Fira Sans", sans-serif
+                    font-size: 0.75rem
+                    font-weight: 300
+                    color: white
+                    padding-left: 10px
+                    line-height: 1.5
+                    display: block
         .open-header-login-wrap
             .open-header-login
                 width: 20px
@@ -279,7 +316,7 @@ header
                             -webkit-box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.45)
                             -moz-box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.45)
                             box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.45)
-                            @media (min-width : 0em) and (max-width : 40em)
+                            @media (min-width : 0em) and (max-width : 64em)
                                 width: 100%
                             h4
                                 font:
@@ -432,6 +469,8 @@ header
             weight: 300
         color: #fff
         padding-left: 10px
+        line-height: 1.5
+        display: block
     .wl-wrap
         height: 100px
         width: 100%
@@ -443,9 +482,7 @@ header
             +my_vertical_align
                 position: absolute
             @media (min-width : 0em) and (max-width : 40em)
-                position: static
-                transform: none
-                top: 0
+                +my_vertical_align_none
     h3
         font:
             family: 'nautilus_pompiliusregular'
@@ -523,9 +560,7 @@ ul#online-girls
             padding-bottom: 3rem
             position: static
             ul
-                transform: none !important
-                top: 0 !important
-                position: static !important
+                +my_vertical_align_none
         ul
             +my_vertical_align
                 position: absolute
@@ -682,6 +717,8 @@ ul#online-girls
     margin-bottom: 80px
     @media (min-width : 0em) and (max-width : 40em)
         height: auto
+    .men-say-item
+        position: relative
     .men-say-header
         width: 100%
         height: 1px
@@ -754,9 +791,7 @@ ul#online-girls
         +my_vertical_align
             position: absolute
         @media (min-width : 0em) and (max-width : 40em)
-            transform: none
-            position: static
-            top: 0
+            +my_vertical_align_none
         .registration-form-inner
             background: #84aad6 /* Old browsers */
             background: -moz-linear-gradient(left,  #84aad6 0%, #3763a1 100%) /* FF3.6+ */
@@ -777,9 +812,7 @@ ul#online-girls
                     padding-bottom: 0
                     height: auto
                     img
-                        transform: none
-                        position: static
-                        top: 0
+                        +my_vertical_align_none
             .input, input
                 width: 100%
             .form-wrap
@@ -792,13 +825,7 @@ ul#online-girls
                     padding-bottom: 2.86rem
                 form
                     width: 100%
-                    /*+my_vertical_align*/
-                        /*position: absolute*/
                     padding-right: .9375rem
-                    /*@media (min-width : 0em) and (max-width : 40em)*/
-                        /*transform: none*/
-                        /*position: static*/
-                        /*top: 0*/
             .input
                 padding-bottom: 4px
             .submit
@@ -806,7 +833,6 @@ ul#online-girls
                 padding-bottom: 0
                 input
                     margin-left: 0
-
                 @media (min-width : 0em) and (max-width : 64em)
                     width: 100%
 .small-medium
@@ -821,12 +847,10 @@ ul#online-girls
     position: relative
     @media (min-width : 0em) and (max-width : 40em)
         height: auto
-        padding-bottom: 0
+        padding-bottom: 0 !important
         position: static
         img
-            transform: none !important
-            top: 0 !important
-            position: static !important
+            +my_vertical_align_none
     img
         +my_vertical_align
             position: absolute
@@ -968,4 +992,8 @@ ul#online-girls
 .small-end
     @media (min-width : 0em) and (max-width : 40em)
         float: left !important
+
+.tooltip
+    font-family: "Fira Sans", sans-serif
+    color: #58595b
 
